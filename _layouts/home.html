@@ -2,15 +2,26 @@
 layout: default
 ---
 
-<div class="home" id="vue-app">
-  <script src="/javascript/vue/postbox.js"></script>
-  {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<div class="home">
+  <script src="/javascript/vue/postresults.js"></script>
+  <div id="vue-app">
+    {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
 
-  {{ content }}
+    {{ content }}
 
-  {%- if site.posts.size > 0 -%}
+    <postresults>
+      <template v-slot:[someslotname]>
+        <h1>Footer content</h1>
+        <p>Result: </p>
+      </template>
+      <template v-slot:header="data">
+        <h1>Header content: {{ data.is }}</h1>
+      </template>
+    </postresults>
+
+    <!-- {%- if site.posts.size > 0 -%}
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
@@ -30,20 +41,11 @@ layout: default
     </postbox>
     {%- endfor -%}
   </ul>
-  {%- endif -%}
+  {%- endif -%} -->
 
-  <form action="get" id="site_search">
-    <center>
-      <input style="font-size:20px;" type="text" id="search_box">
-      <input style="font-size:20px;" type="submit" value="Go!">
-    </center>
-  </form>
-  <br />&nbsp;
-  <br />&nbsp;
 
-  <ul id="search_results"></ul>
 
-  <!-- {%- if site.posts.size > 0 -%}
+    <!-- {%- if site.posts.size > 0 -%}
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
@@ -63,5 +65,5 @@ layout: default
   </ul>
 
   {%- endif -%} -->
-
+  </div>
 </div>

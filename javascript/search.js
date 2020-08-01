@@ -10,8 +10,6 @@ jQuery(function () {
     // Wait for the data to load and add it to lunr
     window.data.then(function (loaded_data) {
 
-        console.log("ADDING DATA");
-
         let loadedData = [];
 
 
