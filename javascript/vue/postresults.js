@@ -10,15 +10,11 @@ Vue.component('postresults', {
         </center>
     </form>
     <br />&nbsp;
-    <h1>Post results:</h1>
     <ul> 
         <li v-for="(someItem, name) in displayData">
             <slot :name="name"></slot>
         </li>
     </ul>
-
-    <p>{{ displayData }}</p>
-
     </div>
     
     `,

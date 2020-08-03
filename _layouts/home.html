@@ -14,57 +14,14 @@ layout: default
     {{ content }}
 
     <postresults>
-      {%- for post in site.posts %}
-        <template v-slot:{{ post.url | slugify }}>
-          <h1>{{post.title | escape}}</h1>
-          {{ post.content }}
+      {%- for tip in site.tips %}
+        <template v-slot:{{ tip.url | slugify }}>
+          <h1>{{tip.title | escape}}</h1>
+          <a href="{{ tip.url | relative_url }}">Link</a>
+          {{ tip.content }}
         </template>
       {%- endfor -%}
     </postresults>
 
-    <!-- {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-    <postbox>
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-        {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-    </postbox>
-    {%- endfor -%}
-  </ul>
-  {%- endif -%} -->
-
-
-
-    <!-- {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-    <li>
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-      {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-      {%- endif -%}
-    </li>
-    {%- endfor -%}
-  </ul>
-
-  {%- endif -%} -->
   </div>
 </div>

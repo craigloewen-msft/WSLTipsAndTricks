@@ -33,7 +33,10 @@ theme: minima
 plugins:
   - jekyll-feed
 
-permalink: /:year/:month/:day/:title:output_ext
+collections:
+  tips:
+    output: true
+    permalink: /tip/:title:output_ext
 
 # Exclude from processing.
 # The following items will not be processed, by default.
