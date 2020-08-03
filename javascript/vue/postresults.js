@@ -2,11 +2,7 @@ Vue.component('postresults', {
     template: `
     <div>
 
-    <h1>Slot content:</h1>
-    <slot name="garbage">
-    </slot>
-    <slot v-bind="{is: 'true!'}" name="header">
-    </slot>
+    <slot :name="garbCollection"></slot>
 
         <form action="get" id="site_search">
         <center>
@@ -16,13 +12,12 @@ Vue.component('postresults', {
     <br />&nbsp;
     <h1>Post results:</h1>
     <ul> 
-        <li v-for="someItem in displayData">
-            <p>Title: {{ someItem.title }} , content: {{ someItem.content }} , categories: {{ someItem.categories }}</p>
+        <li v-for="(someItem, name) in displayData">
+            <slot :name="name"></slot>
         </li>
     </ul>
 
     <p>{{ displayData }}</p>
-    <p>{{ searchData }}</p>
 
     </div>
     
@@ -31,9 +26,9 @@ Vue.component('postresults', {
         return {
           searchText: "",
           searchData: {},
-          displayData: [],
+          displayData: {},
           lunrSearch: null,
-          user: "joe"
+          garbCollection: "garb1"
         };
     },
     methods: {
@@ -50,14 +45,14 @@ Vue.component('postresults', {
 
             let thisComponent = this;
 
-            this.displayData = [];
+            this.displayData = {};
             
             // Iterate over the results
             results.forEach(function (result) {
                 var item = thisComponent.searchData[result.ref];
 
                 // Add the snippet to the collection of results.
-                thisComponent.displayData.push(item);
+                thisComponent.displayData[result.ref] = item;
             });
 
         }
@@ -106,12 +101,3 @@ Vue.component('postresults', {
 
     }
 });
-window.onload = function () {
-    var app = new Vue({
-        el: '#vue-app',
-        data: {
-            someslotname: "garbage",
-            val2: "garbage2"
-        }
-    });
-};

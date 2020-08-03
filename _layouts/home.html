@@ -4,6 +4,8 @@ layout: default
 
 <div class="home">
   <script src="/javascript/vue/postresults.js"></script>
+  <script src="/javascript/vue/vueinit.js"></script>
+  <script src="/javascript/vue/postbox.js"></script>
   <div id="vue-app">
     {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
@@ -12,13 +14,12 @@ layout: default
     {{ content }}
 
     <postresults>
-      <template v-slot:[someslotname]>
-        <h1>Footer content</h1>
-        <p>Result: </p>
-      </template>
-      <template v-slot:header="data">
-        <h1>Header content: {{ data.is }}</h1>
-      </template>
+      {%- for post in site.posts %}
+        <template v-slot:{{ post.url | slugify }}>
+          <h1>{{post.title | escape}}</h1>
+          {{ post.content }}
+        </template>
+      {%- endfor -%}
     </postresults>
 
     <!-- {%- if site.posts.size > 0 -%}
