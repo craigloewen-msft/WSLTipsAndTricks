@@ -52,6 +52,6 @@
 }
 
 .tip-window {
-    transition: height 1s ease-in-out;
+    transition: max-height 0.3s ease-in-out;
     overflow: hidden;
 }

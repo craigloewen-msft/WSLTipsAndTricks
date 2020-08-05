@@ -8,13 +8,8 @@ Vue.component('postresults', {
             <li v-for="(someItem, name) in displayData">
                 <a class="btn btn-default" v-on:click="toggleClick(name)">{{ someItem.title }}</a>
                 <transition-expand>
-                    <div v-bind:class="{ 'is-collapsed': someItem.collapsed }">
-                        <div>
                         <slot :name="name"></slot>
-                        </div>
-                    </div>
                 </transition-expand>
-
             </li>
     </ul>
     </div>

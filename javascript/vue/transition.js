@@ -1,63 +1,38 @@
 Vue.component('TransitionExpand', {
     template: `
-    <transition
-        name="expand"
-        @enter="enter"
-        @after-enter="afterEnter"
-        @leave="leave"
-        >
+    <div class="tip-window" v-bind:style="{ 'max-height': currentHeight }">
+        <a class="btn btn-default" v-on:click="toggleExpand()">Expand and close</a>
         <slot/>
-    </transition>
+    </div>
     `,
     data: function () {
         return {
-            expanded: false
+            expanded: false,
+            maxheight: "",
+            element: null,
+            currentHeight: "9000px"
         };
     },
     methods: {
-        enter(element) {
-            const width = getComputedStyle(element).width;
-
-            element.style.width = width;
-            element.style.position = 'absolute';
-            element.style.visibility = 'hidden';
-            element.style.height = 'auto';
-
-            const height = getComputedStyle(element).height;
-
-            element.style.width = null;
-            element.style.position = null;
-            element.style.visibility = null;
-            element.style.height = 0;
-
-            // Force repaint to make sure the
-            // animation is triggered correctly.
-            getComputedStyle(element).height;
-
-            // Trigger the animation.
-            // We use `requestAnimationFrame` because we need
-            // to make sure the browser has finished
-            // painting after setting the `height`
-            // to `0` in the line above.
-            requestAnimationFrame(() => {
-                element.style.height = height;
-            });
-        },
-        afterEnter(element) {
-            element.style.height = 'auto';
-        },
-        leave(element) {
-            const height = getComputedStyle(element).height;
-
-            element.style.height = height;
-
-            // Force repaint to make sure the
-            // animation is triggered correctly.
-            getComputedStyle(element).height;
-
-            requestAnimationFrame(() => {
-                element.style.height = 0;
-            });
-        },
-    }
+        toggleExpand: function () {
+            console.log("Clicked!",this.expanded);
+            if (this.expanded) {
+                this.currentHeight = "282px";
+                this.expanded = false;
+            } else {
+                console.log("Setting max height: ",this.maxheight)
+                this.currentHeight = this.maxheight + 'px';
+                this.expanded = true;
+            }
+            console.log("New height: ",this.currentHeight);
+            this.$forceUpdate();
+        }
+    },
+    mounted () {
+        this.$nextTick(() => {
+          console.log("Initial mount max height: ",this.$el.clientHeight)
+          this.maxheight = this.$el.clientHeight;
+          this.currentHeight = this.maxheight;
+        })
+    },
 });
