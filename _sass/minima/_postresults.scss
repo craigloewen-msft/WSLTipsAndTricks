@@ -1,0 +1,57 @@
+.expanded {
+    border: 1px red solid;
+}
+
+// .tip-collapsible {
+
+//     &:after {
+//         content: "";
+//         display: block;
+//         width: 100%;
+//         height: 80%;
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         visibility: visible;
+//         background: linear-gradient(
+//             to top,
+//             rgba(255,255,255,1) 15%,
+//             rgba(255,255,255,0)
+//         );
+//         pointer-events: none;
+//         transition: transform 250ms ease;
+//         transform-origin: 50% 100%;
+//         transform: rotateX(90deg);
+//     }
+
+    
+
+// }
+
+// .tip-collapsed {
+
+//     &:after {
+//         transform:rotateX(0deg);
+//     }
+// }
+
+.expand-enter-active,
+.expand-leave-active {
+  transition: height 1s ease-in-out;
+  overflow: hidden;
+}
+
+.expand-enter,
+.expand-leave-to {
+  height: 0px;
+}
+
+.is-collapsed {
+    height: 0;
+    overflow:hidden;
+}
+
+.tip-window {
+    transition: height 1s ease-in-out;
+    overflow: hidden;
+}
