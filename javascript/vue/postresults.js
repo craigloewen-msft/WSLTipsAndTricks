@@ -4,9 +4,8 @@ Vue.component('postresults', {
         <center>
         <input class="form-control" type="text" id="search_box" v-model="searchText">
         </center>
-    <ul> 
+    <ul class="tip-list"> 
             <li v-for="(someItem, name) in displayData">
-                <a class="btn btn-default" v-on:click="toggleClick(name)">{{ someItem.title }}</a>
                 <transition-expand>
                         <slot :name="name"></slot>
                 </transition-expand>

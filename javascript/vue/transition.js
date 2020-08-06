@@ -1,8 +1,11 @@
 Vue.component('TransitionExpand', {
     template: `
-    <div class="tip-window" v-bind:style="{ 'max-height': currentHeight }">
-        <a class="btn btn-default" v-on:click="toggleExpand()">Expand and close</a>
-        <slot/>
+    <div>
+        <div class="tip-window" v-bind:style="{ 'max-height': currentHeight }" v-on:click.passive="toggleExpand()">
+            <div v-if="!expanded" class="tip-window-collapsed"></div>
+            <slot/>
+            <button class="btn btn-info" v-on:click.stop="toggleClose()">Close</button>
+        </div>
     </div>
     `,
     data: function () {
@@ -15,24 +18,24 @@ Vue.component('TransitionExpand', {
     },
     methods: {
         toggleExpand: function () {
-            console.log("Clicked!",this.expanded);
-            if (this.expanded) {
-                this.currentHeight = "282px";
-                this.expanded = false;
-            } else {
-                console.log("Setting max height: ",this.maxheight)
+            if (!this.expanded) {
                 this.currentHeight = this.maxheight + 'px';
                 this.expanded = true;
             }
-            console.log("New height: ",this.currentHeight);
-            this.$forceUpdate();
+            // this.$forceUpdate();
+        },
+        toggleClose: function () {
+            if (this.expanded) {
+                this.currentHeight = "282px";
+                this.expanded = false;
+            }
         }
     },
-    mounted () {
+    mounted() {
         this.$nextTick(() => {
-          console.log("Initial mount max height: ",this.$el.clientHeight)
-          this.maxheight = this.$el.clientHeight;
-          this.currentHeight = this.maxheight;
+            // Magic number is from the margin-bottom style and button height
+            this.maxheight = this.$el.clientHeight + 50;
+            this.currentHeight = "282px";
         })
     },
 });

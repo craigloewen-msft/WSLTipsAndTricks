@@ -54,4 +54,25 @@
 .tip-window {
     transition: max-height 0.3s ease-in-out;
     overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 10px 16px;
+}
+
+.tip-window-collapsed {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1));
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position:absolute;
+}
+
+.tip-list {
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+.tip-list li {
+  margin-bottom: 25px;
 }

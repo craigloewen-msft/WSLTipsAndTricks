@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Jekyll to Welcome!"
+title:  "I love hotdogs!!"
 date:   2020-02-22 13:19:24 -0800
+author: "Craig Loewen"
 categories: jekyll update sausage
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

@@ -16,8 +16,20 @@ layout: default
     <postresults>
       {%- for tip in site.tips %}
         <template v-slot:{{ tip.url | slugify }}>
-          <h1>{{tip.title | escape}}</h1>
-          <a href="{{ tip.url | relative_url }}">Link</a>
+          
+          <header class="post-header">
+            <h1 class="post-title p-name"><a href="{{ tip.url | relative_url }}">{{tip.title | escape}}</a></h1>
+            <p class="post-meta">
+              <time class="dt-published" datetime="{{ tip.date | date_to_xmlschema }}" itemprop="datePublished">
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                {{ tip.date | date: date_format }}
+              </time>
+              {%- if tip.author -%}
+              • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+                  itemprop="name">{{ tip.author }}</span></span>
+              {%- endif -%}</p>
+          </header>
+
           {{ tip.content }}
         </template>
       {%- endfor -%}
