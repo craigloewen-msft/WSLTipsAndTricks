@@ -5,3 +5,5 @@ A repository to store tips, tricks, and other fun guides on everything and anyth
 # Acknowledgements
 
 Open and closing fading previews was based on [this article](https://markus.oberlehner.net/blog/transition-to-height-auto-with-vue/) by Markus Oberlehner. Thank you! :)
+
+This is based on the base [Jekyll](https://github.com/jekyll) theme. 
