@@ -6,7 +6,7 @@ Check out our [about page]() for tips on how you can contribute!
 
 ## Dependencies
 
-To build this locally you will need to [install Jekyll](https://jekyllrb.com/docs/installation/). From there, clone the project and run `bundle exec jekyll -w` to run it.
+To build this locally you will need to [install Jekyll](https://jekyllrb.com/docs/installation/). From there, clone the project, run `bundle install` to install dependencies and run `bundle exec jekyll -w` to run it.
 
 # Acknowledgements
 
