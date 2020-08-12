@@ -2,6 +2,8 @@
 
 A repository to store tips, tricks, and other fun guides on everything and anything Windows Subsystem for Linux related.
 
+## [View this site live](https://craigloewen-msft.github.io/WSLTipsAndTricks/)
+
 Check out our [about page]() for tips on how you can contribute!
 
 ## Run it locally
