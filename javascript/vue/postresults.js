@@ -65,8 +65,8 @@ Vue.component('postresults', {
         }
     },
     created: function () {
-        // Get code for 
-        let getAllSearchData = $.getJSON('/search_data.json');
+        // Get the search location. Hard coded for now :(
+        let getAllSearchData = $.getJSON('/WSLTipsAndTricks/search_data.json');
 
         let thisComponent = this;
 

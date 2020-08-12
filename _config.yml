@@ -21,7 +21,7 @@
 title: WSL Tips and Tricks
 description: >- # this means to ignore newlines until "baseurl:"
   A collection of tips and tricks for the Windows Subsystem for Linux
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/WSLTipsAndTricks" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: craigaloewen
 github_username:  craigloewen-msft
