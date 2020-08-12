@@ -12,6 +12,8 @@ To build this locally you will need to [install Jekyll](https://jekyllrb.com/doc
 
 # Acknowledgements
 
+This project was inspired by the amazing WSL community that so often creates Tips and tricks for using WSL! I wanted to create somewhere to store these so users can easily search and view them. PRs are always welcome. 
+
 Open and closing fading previews was based on [this article](https://markus.oberlehner.net/blog/transition-to-height-auto-with-vue/) by Markus Oberlehner. Thank you! :)
 
 This is based on the base [Jekyll](https://github.com/jekyll) theme. 
