@@ -4,7 +4,7 @@ layout: default
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <a href="{{ site.url }}">Back to home</a> 
+    <a href="{{ site.url }}">Back to home</a>
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -21,8 +21,27 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if site.disqus.shortname -%}
-  {%- include disqus_comments.html -%}
+  {%- if page.author-twitter or page.author-github -%}
+  <ul class="post-info-list">
+    <li class="post-info-list-item">
+      More from this author:
+    </li>
+    {%- if page.author-twitter -%}
+    <li class="post-info-list-item">
+      <a href="https://twitter.com/{{ page.author-twitter }}"><i class="fa fa-twitter"></i> {{ page.author-twitter }}</a>
+    </li>
+    {%- endif -%}
+    {%- if page.author-twitter -%}
+    <li class="post-info-list-item">
+      <a href="https://github.com/{{ page.author-github }}"><i class="fa fa-github"></i> {{ page.author-github }}</a>
+    </li>
+    {%- endif -%}
+    {%- if page.author-website -%}
+    <li class="post-info-list-item">
+      <a href="{{ page.author-website }}"><i class="fa fa-globe"></i> Website</a>
+    </li>
+    {%- endif -%}
+  </ul>
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

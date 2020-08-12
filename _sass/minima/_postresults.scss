@@ -73,6 +73,14 @@
   margin-left: 0px;
 }
 
-.tip-list li {
+.tip-list-item {
   margin-bottom: 25px;
+}
+
+.main-search-bar {
+  margin-bottom: 40px;
+}
+
+::placeholder {
+  opacity: 0.3!important;
 }

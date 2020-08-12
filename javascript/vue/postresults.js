@@ -2,10 +2,10 @@ Vue.component('postresults', {
     template: `
     <div>
         <center>
-        <input class="form-control" type="text" id="search_box" v-model="searchText">
+        <input class="form-control main-search-bar" type="text" id="search_box" v-model="searchText" placeholder="Try WSL topics like 'GUI', 'VS Code', or 'Git'">
         </center>
     <ul class="tip-list"> 
-            <li v-for="(someItem, name) in displayData">
+            <li class="tip-list-item" v-for="(someItem, name) in displayData">
                 <transition-expand>
                         <slot :name="name"></slot>
                 </transition-expand>
@@ -86,7 +86,7 @@ Vue.component('postresults', {
                 this.field('title');
                 // this.field('content', { boost: 10 });
                 this.field('content');
-                this.field('categories');
+                this.field('categories', { boost: 10 });
 
                 let thisLunr = this;
 

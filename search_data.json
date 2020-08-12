@@ -2,7 +2,8 @@
 layout: null
 ---
 {
-  {% for tip in site.tips %}
+  {% assign sorted-tips = site.tips | sort: 'date' | reverse %}
+  {% for tip in sorted-tips %}
 
     "{{ tip.url | slugify }}": {
       "title": "{{ tip.title | xml_escape }}",

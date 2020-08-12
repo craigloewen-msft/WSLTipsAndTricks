@@ -200,6 +200,7 @@
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
+  margin-bottom: 0px;
 }
 
 .post-link {
@@ -252,4 +253,22 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+.intro-text-box {
+  margin: 50px;
+}
+
+.post-info-list {
+  list-style-type: none;
+  display: flex;
+  font-size: $small-font-size;
+  color: $grey-color;
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
+
+.post-info-list li {
+  margin-bottom: 0px;
+  margin-right: 5px;
 }

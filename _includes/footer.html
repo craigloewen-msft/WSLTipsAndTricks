@@ -5,7 +5,20 @@
 
     <h2 class="footer-heading">{{ site.title | escape }}</h2>
 
-    <div class="footer-col-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>Access this site's source code on Github</p>
+          <a href="https://github.com/craigloewen-msft/WSLTipsAndTricks/"><i class="fa fa-github"></i> WSLTipsAndTricks</a>
+        </div>
+        <div class="col-md-6">
+          <p>Follow the author on social</p>
+          {%- include social.html -%}
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">
@@ -28,7 +41,7 @@
       <div class="footer-col footer-col-3">
         <p>{{- site.description | escape -}}</p>
       </div>
-    </div>
+    </div> -->
 
   </div>
 

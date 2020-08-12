@@ -20,9 +20,7 @@
 
 title: WSL Tips and Tricks
 description: >- # this means to ignore newlines until "baseurl:"
-  This site is dedicated to all the tips and tricks you need for the Windows Subsystem for Linux.
-  This is a collection from the community of how you can maximize your Linux development environment
-  on Windows with WSL and WSL2, for things like setting up NodeJS, Git, SSH, X servers and more!
+  A collection of tips and tricks for the Windows Subsystem for Linux
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: craigaloewen

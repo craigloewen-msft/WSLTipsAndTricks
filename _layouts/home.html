@@ -13,25 +13,53 @@ layout: default
 
     {{ content }}
 
+    <div class="intro-text-box">
+      <h1 class="intro-text">Search for your favourite WSL tips below! Use the search box or simply browse the full list 🔍</h1>
+    </div>
+
     <postresults>
       {%- for tip in site.tips %}
-        <template v-slot:{{ tip.url | slugify }}>
-          
-          <header class="post-header">
-            <h1 class="post-title p-name"><a href="{{ tip.url | relative_url }}">{{tip.title | escape}}</a></h1>
-            <p class="post-meta">
-              <time class="dt-published" datetime="{{ tip.date | date_to_xmlschema }}" itemprop="datePublished">
-                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                {{ tip.date | date: date_format }}
-              </time>
-              {%- if tip.author -%}
-              • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-                  itemprop="name">{{ tip.author }}</span></span>
-              {%- endif -%}</p>
-          </header>
+      <template v-slot:{{ tip.url | slugify }}>
 
-          {{ tip.content }}
-        </template>
+        <header class="post-header">
+          <h1 class="post-title p-name"><a href="{{ tip.url | relative_url }}">{{tip.title | escape}}</a></h1>
+          <p class="post-meta">
+            <time class="dt-published" datetime="{{ tip.date | date_to_xmlschema }}" itemprop="datePublished">
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              {{ tip.date | date: date_format }}
+            </time>
+            {%- if tip.author -%}
+            • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+                itemprop="name">{{ tip.author }}</span></span>
+            {%- endif -%}
+          </p>
+        </header>
+
+        {{ tip.content }}
+
+        {%- if tip.author-twitter or tip.author-github -%}
+        <ul class="post-info-list">
+          <li class="post-info-list-item">
+            More from this author:
+          </li>
+          {%- if tip.author-twitter -%}
+          <li class="post-info-list-item">
+            <a href="https://twitter.com/{{ tip.author-twitter }}"><i class="fa fa-twitter"></i> {{ tip.author-twitter }}</a>
+          </li>
+          {%- endif -%}
+          {%- if tip.author-twitter -%}
+          <li class="post-info-list-item">
+            <a href="https://github.com/{{ tip.author-github }}"><i class="fa fa-github"></i> {{ tip.author-github }}</a>
+          </li>
+          {%- endif -%}
+          {%- if tip.author-website -%}
+          <li class="post-info-list-item">
+            <a href="{{ tip.author-website }}"><i class="fa fa-globe"></i> Website</a>
+          </li>
+          {%- endif -%}
+        </ul>
+        {%- endif -%}
+      </template>
       {%- endfor -%}
     </postresults>
 
