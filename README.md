@@ -4,7 +4,7 @@ A repository to store tips, tricks, and other fun guides on everything and anyth
 
 Check out our [about page]() for tips on how you can contribute!
 
-## Dependencies
+## Run it locally
 
 To build this locally you will need to [install Jekyll](https://jekyllrb.com/docs/installation/). From there, clone the project, run `bundle install` to install dependencies and run `bundle exec jekyll -w` to run it.
 
@@ -15,4 +15,3 @@ Open and closing fading previews was based on [this article](https://markus.ober
 This is based on the base [Jekyll](https://github.com/jekyll) theme. 
 
 This site uses [lunrjs](https://lunrjs.com/) for searching.
-
