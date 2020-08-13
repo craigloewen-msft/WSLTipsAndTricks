@@ -6,6 +6,10 @@ A repository to store tips, tricks, and other fun guides on everything and anyth
 
 Check out our [about page]() for tips on how you can contribute!
 
+## Contribute your own tip
+
+Follow the directions [from the about page of the site](https://craigloewen-msft.github.io/WSLTipsAndTricks/about/) to contribute your own tip.
+
 ## Run it locally
 
 To build this locally you will need to [install Jekyll](https://jekyllrb.com/docs/installation/). From there, clone the project, run `bundle install` to install dependencies and run `bundle exec jekyll -w` to run it.
