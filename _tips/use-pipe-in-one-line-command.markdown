@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Piping inside WSL when using Powershell"
-date:   2020-08-13
+date:   2020-08-13 12:00:00 -0500
 categories: powershell, oneliner, piping
 author: Nuno Captain Corsair
 author-twitter: nunixtech
