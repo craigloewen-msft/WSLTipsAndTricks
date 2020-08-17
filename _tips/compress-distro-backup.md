@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Compress distribution backups"
-date:   2020-08-17
+date:   2020-08-17 12:00:00 -0500
 categories: maintenance
 author: Carlos Ramirez Castillo
 author-twitter: crramirezc
