@@ -17,6 +17,6 @@ From there, using that file, import it back as a new distribution using this com
 
 `wsl --import <DistroName> <InstallLocation> <FileName>` 
 
-Make sure to choose an install location that's under a new drive, and a useful distro name. Keep in mind that you won't be able to access this distro using the classic distro launcher app anymore (as that is referncing the old distro stored on your C drive), you will instaed need to run `wsl -d <DistroName>` or you can set it as your default with `wsl -s <DistroName>` and use `wsl` to access this distro in the future. 
+Make sure to choose an install location that's under a new drive, and a useful distro name. Keep in mind that you won't be able to access this distro using the classic distro launcher app anymore (as that is referencing the old distro stored on your C drive), you will instaed need to run `wsl -d <DistroName>` or you can set it as your default with `wsl -s <DistroName>` and use `wsl` to access this distro in the future.
 
 You will need to be on Windows 10 version 1903 or higher to access this feature. Check out [this blog post](https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-windows-10-version-1903/) for more info. 
