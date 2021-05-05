@@ -22,4 +22,4 @@ Open and closing fading previews was based on [this article](https://markus.ober
 
 This is based on the base [Jekyll](https://github.com/jekyll) theme. 
 
-This site uses [lunrjs](https://lunrjs.com/) for searching.
+This site uses [lunrjs](https://lunrjs.com/) for searching. TEST
